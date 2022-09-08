@@ -16,6 +16,6 @@ Also, the users can add photos to their articles to make them look more attracti
     
 
 #### setup ####
-1. create a .env filters
+1. create a .env file
 2. npm i 
 3. npm run server (dev mode)
