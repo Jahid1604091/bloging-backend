@@ -1,0 +1,66 @@
+const mongoose = require('mongoose');
+const articleSchema = mongoose.Schema({
+    title:{
+        type:String,
+        required:true,
+        min:3
+    },
+    tag:{
+        type:String,
+        required:true,
+        min:3
+    },
+    description:{
+        type:String,
+        required:true,
+        min:3
+    },
+    isFeatured:{
+        type:Boolean,
+        default:false
+    },
+    image:{
+        type:String,
+    },
+    user:{
+        type:mongoose.Schema.Types.ObjectId,
+        required:true,
+        ref:'User'
+    },
+    date:{
+        type:Date,
+        default:Date.now
+    },
+    likes:[
+        {
+            user:{
+                type:mongoose.Schema.Types.ObjectId,
+                ref:'User'
+            }
+        }
+    ],
+    comments:[
+        {
+            user:{
+                type:mongoose.Schema.Types.ObjectId,
+                ref:'User'
+            },
+            text:{
+                type:String,
+                required:true,
+            },
+            name:{
+                type:String,
+            },
+            avatar:{
+                type:String,
+            },
+            date:{
+                type:Date,
+                default:Date.now
+            }
+        }
+    ],
+});
+
+module.exports = Article = mongoose.model('Article',articleSchema);
