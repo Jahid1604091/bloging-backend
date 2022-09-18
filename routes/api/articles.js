@@ -50,7 +50,7 @@ router.get('/', async (req, res) => {
                 $options:'i'
             }
         } : {}
-        const articles = await Article.find({...q});
+        const articles = await Article.find({...q}).populate('user','fname lname email');
         res.status(200).json(articles)
     } catch (error) {
         console.log(error.message);

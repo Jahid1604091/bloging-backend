@@ -1,4 +1,4 @@
-#### UI Link - https://preview.colorlib.com/#juli
+backend url - https://bloging-backend.up.railway.app/
 
 #### Features #####
 Because users feel the need to access the latest news and events, this app will be definitely helpful. 

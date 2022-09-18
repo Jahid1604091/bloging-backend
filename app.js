@@ -4,6 +4,7 @@ const PORT = process.env.PORT || 5000;
 const connectDB = require('./config/db');
 const bodyParser = require('body-parser');
 require("dotenv").config();
+const cors = require('cors');
 //connect db
 connectDB();
 
@@ -15,7 +16,7 @@ app.use(bodyParser.urlencoded({
 // app.use(bodyParser.json());
 // app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-
+app.use(cors());
 app.get('/',(req,res)=>{
     res.send('Server running....')
 })
